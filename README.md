@@ -1,4 +1,4 @@
-# BiMind: Bi-Mind Two-Brain Fake News Detector
+# BiMind: A Dual-Head Reasoning Model with Attention-Geometry Adapter for Incorrect Information Detection
 
 ## Abstract
 
