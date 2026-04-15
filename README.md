@@ -6,7 +6,7 @@ Incorrect information poses significant challenges by disrupting content veracit
 
 ---
 
-A dual-head fake news detection framework that combines a **frozen LLM backbone** (LLaMA-2 / Mistral) with a **POS-aware adapter** and **FiLM-based knowledge injection**, inspired by the idea of two reasoning systems — one relying on surface content, another on external knowledge.
+A dual-head incorrect information detection framework that combines a **frozen LLM backbone** (LLaMA-7B) with a **attention geometry adapter** and **FiLM-based knowledge injection**, inspired by the idea of two reasoning systems — one relying on surface content, another on external knowledge.
 
 ---
 
