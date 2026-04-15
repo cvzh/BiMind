@@ -107,3 +107,18 @@ Training produces `best_llm_model.pth` and prints per-epoch metrics. After train
 
 Default: [ReCOVery](https://github.com/apurvamulay/ReCOVery) — a COVID-19 fake news dataset.  
 Any CSV with `statement` (text) and `label` (class) columns is compatible.
+
+---
+
+## Citation
+
+If you use this work, please cite:
+
+```bibtex
+@article{zhang2026bimind,
+  title={BiMind: A Dual-Head Reasoning Model with Attention-Geometry Adapter for Incorrect Information Detection},
+  author={Zhang, Zhongxing and Vraga, Emily K and Huh, Jisu and Srivastava, Jaideep},
+  journal={arXiv preprint arXiv:2604.06022},
+  year={2026}
+}
+```
