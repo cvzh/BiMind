@@ -12,25 +12,9 @@ A dual-head incorrect information detection framework that combines a **frozen L
 
 ## Architecture Overview
 
-```
-Input Text
-    │
-    ├─ LLM Backbone (frozen)
-    │       └─ POS Adapter  ──────── POS tags (spaCy)
-    │               │
-    │           pooled [B, D]
-    │                │
-    │   ┌────────────┴────────────┐
-    │   │ No-Exp Head             │ Exp Head (FiLM)
-    │   │ [text ⊕ TF-IDF]→ z0    │ [FiLM(text, KB) ⊕ TF-IDF]→ zE
-    │   └────────────┬────────────┘
-    │                │
-    │           Fusion Gate
-    │                │
-    │           z_fused → prediction
-    │
-    └─ Knowledge Base (sentence embeddings of training texts)
-```
+![BiMind Architecture](assets/architecture.png)
+
+> *Figure: (a) BiMind Dual-Head Architecture — content-internal and knowledge-augmented reasoning paths fused via an entropy-aware gate. (b) Attention Geometry Adapter — POS-conditioned query/key offsets injected before softmax. (c) Self-retrieval Knowledge Module — kNN memory bank with FiLM modulation. (d) Uncertainty-aware Fusion Strategy with the VoX Plane visualization.*
 
 **Two-Brain design:**
 - **No-experience head (`z0`)** — classifies from text content + TF-IDF features alone.
