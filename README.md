@@ -108,18 +108,9 @@ Training produces `best_llm_model.pth` and prints per-epoch metrics. After train
 Default: [ReCOVery](https://github.com/apurvamulay/ReCOVery) — a COVID-19 dataset.  
 Any CSV with `statement` (text) and `label` (class) columns is compatible.
 
----
-
-## Dataset
-
-Default: [ReCOVery](https://github.com/apurvamulay/ReCOVery) — a COVID-19 dataset.  
-Any CSV with `statement` (text) and `label` (class) columns is compatible.
-
----
-
 ### Data Splits Table
 
-**Primary Dataset — ReCOVery.csv**
+**Dataset — ReCOVery.csv**
 
 | Split                     | Size (samples) | Proportion | Role                 | Used for                                                                 |
 |--------------------------|----------------|------------|----------------------|--------------------------------------------------------------------------|
@@ -133,6 +124,7 @@ Any CSV with `statement` (text) and `label` (class) columns is compatible.
 ```python
 train_test_split(data, test_size=0.1)        # → Train-full (90%) + Test (10%)
 train_test_split(train_full, test_size=0.1) # → Train (81%) + Val (9%)
+```
 
 ---
 
