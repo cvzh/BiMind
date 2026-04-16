@@ -110,6 +110,32 @@ Any CSV with `statement` (text) and `label` (class) columns is compatible.
 
 ---
 
+## Dataset
+
+Default: [ReCOVery](https://github.com/apurvamulay/ReCOVery) — a COVID-19 dataset.  
+Any CSV with `statement` (text) and `label` (class) columns is compatible.
+
+---
+
+### Data Splits Table
+
+**Primary Dataset — ReCOVery.csv**
+
+| Split                     | Size (samples) | Proportion | Role                 | Used for                                                                 |
+|--------------------------|----------------|------------|----------------------|--------------------------------------------------------------------------|
+| Total (after dropna)     | ~2,029         | 100%       | Full corpus          | —                                                                        |
+| Train                    | 1,643          | ~81%       | Model training       | KB embeddings, TF-IDF/verb vectorizer fitting, label encoder fitting     |
+| Validation               | 183            | ~9%        | Hyperparameter tuning| Early stopping, ReduceLROnPlateau                                        |
+| Test                     | 203            | ~10%       | Final evaluation     | Accuracy, F1, leakage experiment                                         |
+
+**Splitting procedure** *(two-stage, random_state=0, no stratification)*:
+
+```python
+train_test_split(data, test_size=0.1)        # → Train-full (90%) + Test (10%)
+train_test_split(train_full, test_size=0.1) # → Train (81%) + Val (9%)
+
+---
+
 ## Citation
 
 If you use this work, please cite:
