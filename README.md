@@ -105,7 +105,7 @@ Training produces `best_llm_model.pth` and prints per-epoch metrics. After train
 
 ## Dataset
 
-Default: [ReCOVery](https://github.com/apurvamulay/ReCOVery) — a COVID-19 fake news dataset.  
+Default: [ReCOVery](https://github.com/apurvamulay/ReCOVery) — a COVID-19 dataset.  
 Any CSV with `statement` (text) and `label` (class) columns is compatible.
 
 ---
