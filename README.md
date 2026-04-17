@@ -6,7 +6,7 @@ Incorrect information poses significant challenges by disrupting content veracit
 
 ---
 
-A dual-head incorrect information detection framework that combines a **frozen LLM backbone** (LLaMA-7B) with a **attention geometry adapter** and **FiLM-based knowledge injection**, inspired by the idea of two reasoning systems — one relying on content itself, another on external knowledge.
+A dual-head incorrect information detection framework that combines a **frozen LLM backbone** (LLaMA-7B) with a **AGA** and **FiLM-based knowledge injection**, inspired by the idea of two reasoning systems — one relying on content itself, another on external knowledge.
 
 ---
 
@@ -14,11 +14,11 @@ A dual-head incorrect information detection framework that combines a **frozen L
 
 ![BiMind Architecture](assets/NewIllus.png)
 
-> *Figure: (a) BiMind Dual-Head Architecture — content-internal and knowledge-augmented reasoning paths fused via an entropy-aware gate. (b) Attention Geometry Adapter — POS-conditioned query/key offsets injected before softmax. (c) Self-retrieval Knowledge Module — kNN memory bank with FiLM modulation. (d) Uncertainty-aware Fusion Strategy with the VoX Plane visualization.*
+> *Figure: An illustration of our proposed BiMind framework. (a) Dual-head architecture with a content-internal head (top) and a knowledge-augmented head (bottom). (b) Attention geometry adapter reshapes pre-softmax attention logits via token-conditioned offsets. (c) Self-retrieval knowledge module retrieves top-$k$ neighbors and injects knowledge via FiLM to provide knowledge-augmented representations. (d) Uncertainty-aware fusion combines head logits via an entropy gating, with the VoX metric quantifying the knowledge contributions by comparing head outcomes, where blue and green surfaces in the instance space represent the content and knowledge reasoning heads, respectively.*
 
-**Two-Brain design:**
-- **No-experience head (`z0`)** — classifies from text content + TF-IDF features alone.
-- **Experience head (`zE`)** — enriches the text representation via FiLM modulation conditioned on retrieved knowledge vectors.
+**Dual-Head design:**
+- **No-experience head (`z0`)** — classifies from text content alone.
+- **Experience head (`zE`)** — enhances the text representation via FiLM modulation conditioned on retrieved knowledge.
 - **Fusion** — combines both heads via a learned entropy-aware gate (or `logit_avg` / `poe` / `agree_head`).
 
 ---
