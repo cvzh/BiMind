@@ -27,7 +27,7 @@ A dual-head incorrect information detection framework that combines a **frozen L
 
 | File | Description |
 |---|---|
-| `utils.py` | Global singletons (`nlp`, `sentence_model`), seed, tokenisation, POS helpers, knowledge retrieval, diagnostic helpers |
+| `utils.py` | Global settings (`nlp`, `sentence_model`), seed, tokenization, POS helpers, knowledge retrieval, diagnostic helpers |
 | `dataset.py` | `NewsDataset` (custom transformer), `LLMNewsDataset` (LLM backbone) |
 | `models.py` | `LearnedAbsolutePE`, `POSGatedAttentionLayer`, `POSGatedTransformerEncoder`, `L3BTwoBrain`, `LLMWithPOSAdapter`, `L3BTwoBrainLLM` |
 | `features.py` | `prepare_features`, `prepare_llm_features` |
