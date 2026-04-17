@@ -82,6 +82,7 @@ Training produces `best_llm_model.pth` and prints per-epoch metrics. After train
 | `logit_avg` | Weighted average of logits: $\beta z_0 + (1-\beta) z_E$ |
 | `poe` | Product of Experts: $\log(p_0 \cdot p_E)$ |
 | `agree_head` | Separate MLP over $[h, h_E, h \odot h_E, |h - h_E|]$ |
+| agree_head | Separate MLP over `[h, h_E, h \odot h_E, |h - h_E|]` |
 
 ---
 
