@@ -14,7 +14,7 @@ A dual-head incorrect information detection framework that combines a **frozen L
 
 ![BiMind Architecture](assets/NewIllus.png)
 
-> *Figure: An illustration of our proposed BiMind framework. (a) Dual-head architecture with a content-internal head (top) and a knowledge-augmented head (bottom). (b) Attention geometry adapter reshapes pre-softmax attention logits via token-conditioned offsets. (c) Self-retrieval knowledge module retrieves top-$k$ neighbors and injects knowledge via FiLM to provide knowledge-augmented representations. (d) Uncertainty-aware fusion combines head logits via an entropy gating, with the VoX metric quantifying the knowledge contributions by comparing head outcomes, where blue and green surfaces in the instance space represent the content and knowledge reasoning heads, respectively.*
+> *Figure: An illustration of our proposed BiMind framework. (a) Dual-head architecture with a content-internal head (top) and a knowledge-augmented head (bottom). (b) Attention geometry adapter reshapes pre-softmax attention logits via token-conditioned offsets. (c) Self-retrieval knowledge module retrieves top-k neighbors and injects knowledge via FiLM to provide knowledge-augmented representations. (d) Uncertainty-aware fusion combines head logits via an entropy gating, with the VoX metric quantifying the knowledge contributions by comparing head outcomes, where blue and green surfaces in the instance space represent the content and knowledge reasoning heads, respectively.*
 
 **Dual-Head design:**
 - **No-experience head (`z0`)** — classifies from text content alone.
