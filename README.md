@@ -87,17 +87,17 @@ Training produces `best_llm_model.pth` and prints per-epoch metrics. After train
 
 ## Key Design Choices
 
-- **POS-aware adapter**: spaCy POS tags are aligned to LLM subword tokens and injected as additive biases into the hidden states — no LLM weights are modified.
+- **AGA**: spaCy POS tags are aligned to LLM subword tokens and injected as additive biases into the hidden states — no LLM weights are modified.
 - **FiLM knowledge injection**: retrieved knowledge embeddings modulate the text representation via feature-wise linear modulation (γ, β).
 - **Knowledge dropout**: randomly zeroes knowledge vectors during training to prevent over-reliance on the KB.
-- **Sym-KL agreement regularisation**: penalises divergence between the two heads to encourage complementary specialisation.
-- **Entropy regularisation** (custom transformer only): maximises attention entropy per layer to prevent attention collapse.
+- **Sym-KL agreement regularization**: penalises divergence between the two heads to encourage complementary specialization.
+- **Entropy regularization** (custom transformer only): maximizes attention entropy per layer to prevent attention collapse.
 
 ---
 
 ## Metrics Reported
 
-- Accuracy and weighted F1 for each head (`No-Exp`, `Exp`, `Fused`)
+- Accuracy, Macro-F1 score, Macro-Precision, Macro-Recall for each head (`No-Exp`, `Exp`, `Fused`)
 - Symmetric KL divergence between heads (agreement)
 - VoX gain: correct-class logit improvement from the Exp head over the No-Exp head
 
@@ -114,7 +114,7 @@ Any CSV with `statement` (text) and `label` (class) columns is compatible.
 
 | Split                     | Size (samples) | Proportion | Role                 | Used for                                                                 |
 |--------------------------|----------------|------------|----------------------|--------------------------------------------------------------------------|
-| Total (after dropna)     | ~2,029         | 100%       | Full corpus          | —                                                                        |
+| Total     | ~2,029         | 100%       | Full corpus          | —                                                                        |
 | Train                    | 1,643          | ~81%       | Model training       | KB embeddings, TF-IDF/verb vectorizer fitting, label encoder fitting     |
 | Validation               | 183            | ~9%        | Hyperparameter tuning| Early stopping, ReduceLROnPlateau                                        |
 | Test                     | 203            | ~10%       | Final evaluation     | Accuracy, F1, leakage experiment                                         |
@@ -123,7 +123,7 @@ Any CSV with `statement` (text) and `label` (class) columns is compatible.
 
 ```python
 train_test_split(data, test_size=0.1)        # → Train-full (90%) + Test (10%)
-train_test_split(train_full, test_size=0.1) # → Train (81%) + Val (9%)
+train_test_split(train_full, test_size=0.1)  # → Train (81%) + Val (9%)
 ```
 
 ---
