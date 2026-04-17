@@ -112,12 +112,12 @@ Any CSV with `statement` (text) and `label` (class) columns is compatible.
 
 **Dataset — ReCOVery.csv**
 
-| Split                     | Size (samples) | Proportion | Role                 | Used for                                                                 |
-|--------------------------|----------------|------------|----------------------|--------------------------------------------------------------------------|
-| Total     | ~2,029         | 100%       | Full corpus          | —                                                                        |
-| Train                    | 1,643          | ~81%       | Model training       | KB embeddings, TF-IDF/verb vectorizer fitting, label encoder fitting     |
-| Validation               | 183            | ~9%        | Hyperparameter tuning| Early stopping, ReduceLROnPlateau                                        |
-| Test                     | 203            | ~10%       | Final evaluation     | Accuracy, F1, leakage experiment                                         |
+| Split                     | Size | Proportion | Role                 |
+|--------------------------|----------------|------------|----------------------|
+| Total     | ~2,029         | 100%       | Full corpus          |
+| Train                    | 1,643          | ~81%       | Model training       |
+| Validation               | 183            | ~9%        | Hyperparameter tuning|
+| Test                     | 203            | ~10%       | Final evaluation     | 
 
 **Splitting procedure** *(two-stage, random_state=0, no stratification)*:
 
