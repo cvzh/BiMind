@@ -132,11 +132,20 @@ train_test_split(train_full, test_size=0.1)  # → Train (81%) + Val (9%)
 
 If you use this work, please cite:
 
+> Zhongxing Zhang, Emily K. Vraga, Jisu Huh, and Jaideep Srivastava. 2026. BiMind: A Dual-Head Reasoning Model with Attention-Geometry Adapter for Incorrect Information Detection. In Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 15674–15693, San Diego, California, United States. Association for Computational Linguistics.
+
 ```bibtex
-@article{zhang2026bimind,
-  title={BiMind: A Dual-Head Reasoning Model with Attention-Geometry Adapter for Incorrect Information Detection},
-  author={Zhang, Zhongxing and Vraga, Emily K and Huh, Jisu and Srivastava, Jaideep},
-  journal={arXiv preprint arXiv:2604.06022},
-  year={2026}
+@inproceedings{zhang-etal-2026-bimind,
+    title = "{B}i{M}ind: A Dual-Head Reasoning Model with Attention-Geometry Adapter for Incorrect Information Detection",
+    author = "Zhang, Zhongxing  and
+      Vraga, Emily K.  and
+      Huh, Jisu  and
+      Srivastava, Jaideep",
+    booktitle = "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2026",
+    address = "San Diego, California, United States",
+    publisher = "Association for Computational Linguistics",
+    pages = "15674--15693",
 }
 ```
